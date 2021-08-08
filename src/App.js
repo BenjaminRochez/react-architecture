@@ -7,7 +7,8 @@ import {
   Link
 } from "react-router-dom";
 
-import Test from './pages/Test/Test'
+import Test from './pages/Test'
+import Other from './pages/Other'
 
 function App() {
   return (
@@ -20,13 +21,19 @@ function App() {
             </li>
 
             <li>
-              <Link to="/test">About</Link>
+              <Link to="/test">Test</Link>
+            </li>
+            <li>
+              <Link to="/other">Other</Link>
             </li>
           </ul>
         </nav>
       <Switch>
           <Route exact path="/test">
             <Test />
+          </Route>
+          <Route exact path="/other">
+            <Other />
           </Route>
         </Switch>
       </Router>

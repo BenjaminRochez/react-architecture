@@ -1,5 +1,5 @@
 {
   "private": true,
-  "name": "kdm.containers.test",
+  "name": "containers.test",
   "main": "./Test.js"
 }

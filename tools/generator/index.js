@@ -8,6 +8,8 @@ const copyFiles = require("./src/copyFiles");
 const renameFiles = require("./src/renameFiles");
 const updateFiles = require("./src/updateFiles");
 const successInfo = require("./src/successInfo");
+const linkToRouterReminder = require('./src/linkToRouterReminder');
+
 
 function scaffold({ kind, name, dir }) {
   log.debug(`Scaffolding ${name} ${kind} in ${dir}`);
@@ -30,5 +32,13 @@ function initialize({ kind, name }) {
 }
 
 prompt(questions).then(({ kind, name }) => {
-  initialize({ kind, name }).catch(log.error);
-});
+  if (kind === 'route') {
+    // scaffold both a Container and a Page
+    initialize({ kind: 'container', name })
+      .then(() => initialize({ kind: 'page', name }))
+      .then(() => log.success(linkToRouterReminder({ name })))
+      .catch(log.error)
+  } else {
+    initialize({ kind, name }).catch(log.error)
+  }
+})
