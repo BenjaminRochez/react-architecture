@@ -3,27 +3,27 @@ import PropTypes from 'prop-types'
 import React from 'react'
 
 import { name as packageName } from './package.json'
-import './Test.css'
+import './__NAME__.css'
 
-function Test(props) {
-  const classes = {root: "test-container"}
+function __NAME__(props) {
+  const classes = {root: "__name__"}
   const { className, children, ...rootProps } = props
 
   return (
     <div className={cx(classes.root, className)} data-testid={`${packageName}.root`} {...rootProps}>
-      <h2>Test container</h2>
+      <h3>__NAME__ component</h3>
       {children}
     </div>
   )
 }
 
-Test.propTypes = {
+__NAME__.propTypes = {
   className: PropTypes.string,
   children: PropTypes.node,
 }
 
-Test.defaultProps = {}
+__NAME__.defaultProps = {}
 
-Test.displayName = 'TestContainer'
+__NAME__.displayName = '__NAME__Component'
 
-export default Test
+export default __NAME__
