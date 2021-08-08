@@ -5,7 +5,8 @@ module.exports = [
       message: 'What do you want to generate?',
       choices: [
         'Component',
-        'Container'
+        'Container',
+        'Page'
       ],
       filter: (val) => val.toLowerCase().split(' ')[0],
     },

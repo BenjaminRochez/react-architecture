@@ -1,0 +1,5 @@
+{
+  "private": true,
+  "name": "pages.__name__",
+  "main": "./__NAME__.js"
+}
