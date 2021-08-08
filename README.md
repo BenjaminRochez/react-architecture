@@ -12,6 +12,9 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 In the project directory, you can run:
 
+### `npm run generator`
+This will open an interactive survey in order to create a page, a container, a route or even a component bootstrap for your projet. 
+
 ### `yarn start`
 
 Runs the app in the development mode.\
