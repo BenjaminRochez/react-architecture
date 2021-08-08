@@ -12,7 +12,7 @@ import Test from './pages/Test/Test'
 function App() {
   return (
     <div className="App">
-      <Router>
+      <Router basename="/">
       <nav>
           <ul>
             <li>
@@ -25,7 +25,7 @@ function App() {
           </ul>
         </nav>
       <Switch>
-          <Route path="/test">
+          <Route exact path="/test">
             <Test />
           </Route>
         </Switch>

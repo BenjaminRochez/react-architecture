@@ -1,31 +1,29 @@
 import cx from 'classnames'
 import PropTypes from 'prop-types'
 import React from 'react'
-import { Helmet } from 'react-helmet'
-
-import TestContainer from '../../../src/containers/Test'
 
 import { name as packageName } from './package.json'
 import './Test.css'
 
 function Test(props) {
-  const classes = {root: "test"}
-  const { className, ...rootProps } = props
+  const classes = {root: "test-container"}
+  const { className, children, ...rootProps } = props
 
   return (
     <div className={cx(classes.root, className)} data-testid={`${packageName}.root`} {...rootProps}>
-      <Helmet title="Test" />
-      <TestContainer />
+      <h2>Test container</h2>
+      {children}
     </div>
   )
 }
 
 Test.propTypes = {
   className: PropTypes.string,
+  children: PropTypes.node,
 }
 
 Test.defaultProps = {}
 
-Test.displayName = 'TestPage'
+Test.displayName = 'TestContainer'
 
 export default Test

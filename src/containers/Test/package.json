@@ -1,0 +1,5 @@
+{
+  "private": true,
+  "name": "kdm.containers.test",
+  "main": "./Test.js"
+}
